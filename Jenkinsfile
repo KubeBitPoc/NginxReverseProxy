@@ -39,7 +39,7 @@ podTemplate(label: 'Jenkins', containers: [
         
         try {
             sh "kubectl delete deployment frontend-deployment"
-        } catch(error) }
+	} catch(error) {}
         
         
         sh "kubectl create -f frontend-deployment.yaml"
