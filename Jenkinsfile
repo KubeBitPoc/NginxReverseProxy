@@ -45,7 +45,7 @@ podTemplate(label: 'Jenkins', containers: [
         sh "kubectl create -f frontend-deployment.yaml"
         
         try {
-            sh "Kubectl delete service frontend-service"
+            sh "kubectl delete service frontend-service"
         } catch(error) {}
         
         sh "kubectl create -f frontend-service.yaml"
