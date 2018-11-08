@@ -25,7 +25,7 @@ podTemplate(label: 'Jenkins', containers: [
           usernameVariable: 'DOCKER_HUB_USER',
           passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
           sh """
-           
+            echo "Attempting docker login using ${DOCKER_HUB_USER}"
             docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
             echo "We are currently in directory $pwd"
 	    docker build -t anilbb/webapp-proxy:latest .
